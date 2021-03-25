@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\baseController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -21,3 +22,8 @@ Route::get('/', function () {
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
 });
+
+//static routes
+Route::get('/{page}', baseController::class)
+->where(['page' => 'contact|faq|about'])
+->name('static');
