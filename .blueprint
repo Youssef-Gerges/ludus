@@ -1,0 +1,58 @@
+created:
+    - database/factories/CategoryFactory.php
+    - database/factories/BrandFactory.php
+    - database/factories/BrandUserFactory.php
+    - database/factories/PromoCodeFactory.php
+    - database/factories/ProductFactory.php
+    - database/factories/ProductVarityFactory.php
+    - database/factories/ProductImageFactory.php
+    - database/factories/ReviewFactory.php
+    - database/factories/InvoiceFactory.php
+    - database/factories/OrderFactory.php
+    - database/factories/DiscountFactory.php
+    - database/migrations/2021_03_25_125952_create_categories_table.php
+    - database/migrations/2021_03_25_125953_create_brands_table.php
+    - database/migrations/2021_03_25_125954_create_brand_users_table.php
+    - database/migrations/2021_03_25_125955_create_promo_codes_table.php
+    - database/migrations/2021_03_25_125956_create_products_table.php
+    - database/migrations/2021_03_25_125957_create_product_varities_table.php
+    - database/migrations/2021_03_25_125958_create_product_images_table.php
+    - database/migrations/2021_03_25_125959_create_reviews_table.php
+    - database/migrations/2021_03_25_130000_create_invoices_table.php
+    - database/migrations/2021_03_25_130001_create_orders_table.php
+    - database/migrations/2021_03_25_130002_create_discounts_table.php
+    - database/migrations/2021_03_25_130003_create_brand_category_table.php
+    - app/Category.php
+    - app/Brand.php
+    - app/BrandUser.php
+    - app/PromoCode.php
+    - app/Product.php
+    - app/ProductVarity.php
+    - app/ProductImage.php
+    - app/Review.php
+    - app/Invoice.php
+    - app/Order.php
+    - app/Discount.php
+    - database/seeders/ProductSeeder.php
+    - database/seeders/CategorySeeder.php
+    - database/seeders/BrandSeeder.php
+    - database/seeders/PromoCodeSeeder.php
+    - database/seeders/ProductVaritySeeder.php
+    - database/seeders/ProductImageSeeder.php
+    - database/seeders/ReviewSeeder.php
+    - database/seeders/InvoiceSeeder.php
+    - database/seeders/OrderSeeder.php
+    - database/seeders/DiscountSeeder.php
+    - database/seeders/BrandUserSeeder.php
+models:
+    Category: { name: string, featured: boolean, relationships: { hasMany: Brand } }
+    Brand: { name: string, category_id: 'id foreign', relationships: { belongsToMany: Category } }
+    BrandUser: { brand_id: 'id foreign', category_id: 'id foreign' }
+    PromoCode: { code: string, value: integer, end_time: dateTime }
+    Product: { name: string, describtion: longText, price: 'integer nullable', stock: 'integer nullable', code: bigInteger, featured: boolean, brand_id: 'id foreign', relationships: { hasMany: 'ProductVarity, ProductImage, Discount' } }
+    ProductVarity: { product_id: 'id foreign', name: string, stock: integer, price: intiger }
+    ProductImage: { product_id: 'id foreign', path: longText, master: boolean }
+    Review: { product_id: 'id foreign', user_id: 'id foreign', content: longText, stars: integer }
+    Invoice: { user_id: 'id foreign', total_price: integer, promo: 'string nullable', code: bigInteger, discount: integer, relationships: { hasMany: Order } }
+    Order: { invoice_id: 'id foreign', product_id: 'id foreign', varity_id: 'id foreign:product_varities.id nullable', count: integer, price: integer }
+    Discount: { product_id: 'id foreign', varity_id: 'id foreign:product_varities.id nullable', value: integer, end_time: dateTime }

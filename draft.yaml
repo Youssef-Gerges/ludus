@@ -1,0 +1,75 @@
+models:
+  Category:
+    name: string
+    featured: boolean
+    image_path: longText
+    relationships:
+      hasMany: Brand
+
+  Brand:
+    name: string
+    category_id: id foreign
+    relationships:
+      belongsToMany: Category
+
+  BrandCategory:
+    brand_id: id foreign
+    category_id: id foreign
+
+  PromoCode:
+    code: string
+    value: integer
+    end_time: dateTime
+
+  Product:
+    name: string
+    describtion: longText
+    price: integer nullable
+    stock: integer nullable
+    code: bigInteger
+    featured: boolean
+    brand_id: id foreign
+    relationships:
+      hasMany: ProductVarity, ProductImage, Discount
+
+  ProductVarity:
+    product_id: id foreign
+    name: string
+    stock: integer
+    price: intiger
+
+  ProductImage:
+    product_id: id foreign
+    path: longText
+    master: boolean
+
+  Review:
+    product_id: id foreign
+    user_id: id foreign
+    content: longText
+    stars: integer
+
+  Invoice:
+    user_id: id foreign
+    total_price: integer
+    promo: string nullable
+    code: bigInteger
+    discount: integer
+    relationships:
+      hasMany: Order
+
+  Order:
+    invoice_id: id foreign
+    product_id: id foreign
+    varity_id: id foreign:product_varities.id nullable
+    count: integer
+    price: integer
+
+
+  Discount:
+    product_id: id foreign
+    varity_id: id foreign:product_varities.id nullable
+    value: integer
+    end_time: dateTime
+
+seeders: Product, Category, Brand, PromoCode, ProductVarity, ProductImage, Review, Invoice, Order, Discount, BrandUser
