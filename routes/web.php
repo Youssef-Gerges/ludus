@@ -72,3 +72,8 @@ Route::group(['prefix'=> 'dashboard', 'middleware'=> 'verified', 'as' => 'userda
     Route::get('/orders' , [orderController::class, 'orders'])->name('orders');
     Route::get('/orders/{invoice}' , [orderController::class, 'manageInvoice'])->name('manageInvoice');
 });
+
+
+Route::group(['prefix' => 'admin'], function () {
+    Voyager::routes();
+});

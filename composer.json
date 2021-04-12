@@ -19,7 +19,7 @@
         "laravel/telescope": "^4.4",
         "laravel/tinker": "^2.5",
         "nesbot/carbon": "^2.46",
-        "spatie/laravel-permission": "^4.0"
+        "tcg/voyager": "^1.4"
     },
     "require-dev": {
         "barryvdh/laravel-debugbar": "^3.5",
