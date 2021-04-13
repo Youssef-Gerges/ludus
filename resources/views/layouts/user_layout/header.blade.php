@@ -88,99 +88,39 @@
                                         <ul style="width:120px">
                                             <li>
 
-                                                <a href="{{ route('userdashboard.home') }}"><i class="fas fa-user-circle u-s-m-r-6"></i>
+                                                <a href="{{ route('userdashboard.home') }}"><i
+                                                        class="fas fa-user-circle u-s-m-r-6"></i>
 
                                                     <span>Account</span></a>
                                             </li>
 
                                             @auth
 
-                                            <li>
-                                                <form method="POST" action=" {{ route('logout') }}" id="logout_form">
-                                                    @csrf
-                                                </form>
-                                                <a onclick="$('#logout_form').submit()">
-                                                    <i class="fas fa-lock-open u-s-m-r-6"></i>
+                                                <li>
+                                                    <form method="POST" action=" {{ route('logout') }}" id="logout_form">
+                                                        @csrf
+                                                    </form>
+                                                    <a onclick="$('#logout_form').submit()">
+                                                        <i class="fas fa-lock-open u-s-m-r-6"></i>
 
-                                                    <span>Signout</span>
-                                                </a>
-                                            </li>
+                                                        <span>Signout</span>
+                                                    </a>
+                                                </li>
                                             @else
-                                            <li>
+                                                <li>
 
-                                                <a href="{{ route('register') }}"><i class="fas fa-user-plus u-s-m-r-6"></i>
+                                                    <a href="{{ route('register') }}"><i
+                                                            class="fas fa-user-plus u-s-m-r-6"></i>
 
-                                                    <span>Signup</span></a>
-                                            </li>
-                                            <li>
+                                                        <span>Signup</span></a>
+                                                </li>
+                                                <li>
 
-                                                <a href="{{ route('login') }}"><i class="fas fa-lock u-s-m-r-6"></i>
+                                                    <a href="{{ route('login') }}"><i class="fas fa-lock u-s-m-r-6"></i>
 
-                                                    <span>Signin</span></a>
-                                            </li>
+                                                        <span>Signin</span></a>
+                                                </li>
                                             @endauth
-                                        </ul>
-                                        <!--====== End - Dropdown ======-->
-                                    </li>
-                                    <li class="has-dropdown" data-tooltip="tooltip" data-placement="left"
-                                        title="Settings">
-
-                                        <a><i class="fas fa-user-cog"></i></a>
-
-                                        <!--====== Dropdown ======-->
-
-                                        <span class="js-menu-toggle"></span>
-                                        <ul style="width:120px">
-                                            <li class="has-dropdown has-dropdown--ul-right-100">
-
-                                                <a>Language<i class="fas fa-angle-down u-s-m-l-6"></i></a>
-
-                                                <!--====== Dropdown ======-->
-
-                                                <span class="js-menu-toggle"></span>
-                                                <ul style="width:120px">
-                                                    <li>
-
-                                                        <a class="u-c-brand">ENGLISH</a>
-                                                    </li>
-                                                    <li>
-
-                                                        <a>ARABIC</a>
-                                                    </li>
-                                                    <li>
-
-                                                        <a>FRANCAIS</a>
-                                                    </li>
-                                                    <li>
-
-                                                        <a>ESPANOL</a>
-                                                    </li>
-                                                </ul>
-                                                <!--====== End - Dropdown ======-->
-                                            </li>
-                                            <li class="has-dropdown has-dropdown--ul-right-100">
-
-                                                <a>Currency<i class="fas fa-angle-down u-s-m-l-6"></i></a>
-
-                                                <!--====== Dropdown ======-->
-
-                                                <span class="js-menu-toggle"></span>
-                                                <ul style="width:225px">
-                                                    <li>
-
-                                                        <a class="u-c-brand">$ - US DOLLAR</a>
-                                                    </li>
-                                                    <li>
-
-                                                        <a>£ - BRITISH POUND STERLING</a>
-                                                    </li>
-                                                    <li>
-
-                                                        <a>€ - EURO</a>
-                                                    </li>
-                                                </ul>
-                                                <!--====== End - Dropdown ======-->
-                                            </li>
                                         </ul>
                                         <!--====== End - Dropdown ======-->
                                     </li>
@@ -264,7 +204,7 @@
                                                         </li>
                                                         <li>
 
-                                                            <a href="index.html"><i
+                                                            <a href="{{ route('home') }}"><i
                                                                     class="fas fa-utensils u-s-m-r-6"></i>
 
                                                                 <span>Food & Supplies</span></a>
@@ -273,7 +213,7 @@
                                                         </li>
                                                         <li>
 
-                                                            <a href="index.html"><i class="fas fa-couch u-s-m-r-6"></i>
+                                                            <a href="{{ route('home') }}"><i class="fas fa-couch u-s-m-r-6"></i>
 
                                                                 <span>Furniture & Decor</span></a>
 
@@ -281,7 +221,7 @@
                                                         </li>
                                                         <li>
 
-                                                            <a href="index.html"><i
+                                                            <a href="{{ route('home') }}"><i
                                                                     class="fas fa-football-ball u-s-m-r-6"></i>
 
                                                                 <span>Sports & Game</span></a>
@@ -1172,10 +1112,6 @@
 
                                 <!--====== List ======-->
                                 <ul class="ah-list ah-list--design2 ah-list--link-color-secondary">
-                                    <li>
-
-                                        <a href="shop-side-version-2.html">NEW ARRIVALS</a>
-                                    </li>
                                     <li class="has-dropdown">
 
                                         <a>PAGES<i class="fas fa-angle-down u-s-m-l-6"></i></a>
@@ -1194,15 +1130,7 @@
                                                 <ul style="width:118px">
                                                     <li>
 
-                                                        <a href="index.html">Home 1</a>
-                                                    </li>
-                                                    <li>
-
-                                                        <a href="index-2.html">Home 2</a>
-                                                    </li>
-                                                    <li>
-
-                                                        <a href="indeindex-3x-3.html">Home 3</a>
+                                                        <a href="{{ route('home') }}">Home </a>
                                                     </li>
                                                 </ul>
                                                 <!--====== End - Dropdown ======-->
@@ -1217,15 +1145,15 @@
                                                 <ul style="width:200px">
                                                     <li>
 
-                                                        <a href="signin.html">Signin / Already Registered</a>
+                                                        <a href="{{ route('login') }}">Signin / Already Registered</a>
                                                     </li>
                                                     <li>
 
-                                                        <a href="signup.html">Signup / Register</a>
+                                                        <a href="{{ route('register') }}">Signup / Register</a>
                                                     </li>
                                                     <li>
 
-                                                        <a href="lost-password.html">Lost Password</a>
+                                                        <a href="{{ route('password.request') }}">Lost Password</a>
                                                     </li>
                                                 </ul>
                                                 <!--====== End - Dropdown ======-->
@@ -1241,7 +1169,7 @@
                                                 <ul style="width:200px">
                                                     <li class="has-dropdown has-dropdown--ul-left-100">
 
-                                                        <a href="dashboard.html">Manage My Account<i
+                                                        <a href="{{ route('userdashboard.home') }}">Manage My Account<i
                                                                 class="fas fa-angle-down i-state-right u-s-m-l-6"></i></a>
 
                                                         <!--====== Dropdown ======-->
@@ -1250,26 +1178,26 @@
                                                         <ul style="width:180px">
                                                             <li>
 
-                                                                <a href="dash-edit-profile.html">Edit Profile</a>
+                                                                <a href="{{ route('userdashboard.edit-myaccount') }}">Edit Profile</a>
                                                             </li>
                                                             <li>
 
-                                                                <a href="dash-address-book.html">Edit Address Book</a>
+                                                                <a href="{{ route('userdashboard.address-book') }}">Edit Address Book</a>
                                                             </li>
                                                             <li>
 
-                                                                <a href="dash-manage-order.html">Manage Order</a>
+                                                                <a href="{{ route('userdashboard.orders') }}">Manage Order</a>
                                                             </li>
                                                         </ul>
                                                         <!--====== End - Dropdown ======-->
                                                     </li>
                                                     <li>
 
-                                                        <a href="dash-my-profile.html">My Profile</a>
+                                                        <a href="{{ route('userdashboard.home') }}">My Profile</a>
                                                     </li>
                                                     <li class="has-dropdown has-dropdown--ul-left-100">
 
-                                                        <a href="dash-address-book.html">Address Book<i
+                                                        <a href="{{ route('userdashboard.address-book') }}">Address Book<i
                                                                 class="fas fa-angle-down i-state-right u-s-m-l-6"></i></a>
 
                                                         <!--====== Dropdown ======-->
@@ -1278,35 +1206,19 @@
                                                         <ul style="width:180px">
                                                             <li>
 
-                                                                <a href="dash-address-make-default.html">Address Make
+                                                                <a href="{{ route('userdashboard.make-default-address') }}">Address Make
                                                                     Default</a>
                                                             </li>
                                                             <li>
 
-                                                                <a href="dash-address-add.html">Add New Address</a>
-                                                            </li>
-                                                            <li>
-
-                                                                <a href="dash-address-edit.html">Edit Address Book</a>
+                                                                <a href="{{ route('userdashboard.add-address') }}">Add New Address</a>
                                                             </li>
                                                         </ul>
                                                         <!--====== End - Dropdown ======-->
                                                     </li>
                                                     <li>
 
-                                                        <a href="dash-track-order.html">Track Order</a>
-                                                    </li>
-                                                    <li>
-
-                                                        <a href="dash-my-order.html">My Orders</a>
-                                                    </li>
-                                                    <li>
-
-                                                        <a href="dash-payment-option.html">My Payment Options</a>
-                                                    </li>
-                                                    <li>
-
-                                                        <a href="dash-cancellation.html">My Returns & Cancellations</a>
+                                                        <a href="{{ route('userdashboard.orders') }}">My Orders</a>
                                                     </li>
                                                 </ul>
                                                 <!--====== End - Dropdown ======-->
@@ -1315,24 +1227,6 @@
 
                                                 <a>Empty<i class="fas fa-angle-down i-state-right u-s-m-l-6"></i></a>
 
-                                                <!--====== Dropdown ======-->
-
-                                                <span class="js-menu-toggle"></span>
-                                                <ul style="width:200px">
-                                                    <li>
-
-                                                        <a href="empty-search.html">Empty Search</a>
-                                                    </li>
-                                                    <li>
-
-                                                        <a href="empty-cart.html">Empty Cart</a>
-                                                    </li>
-                                                    <li>
-
-                                                        <a href="empty-wishlist.html">Empty Wishlist</a>
-                                                    </li>
-                                                </ul>
-                                                <!--====== End - Dropdown ======-->
                                             </li>
                                             <li class="has-dropdown has-dropdown--ul-left-100">
 
@@ -1345,17 +1239,7 @@
                                                 <ul style="width:200px">
                                                     <li>
 
-                                                        <a href="product-detail.html">Product Details</a>
-                                                    </li>
-                                                    <li>
-
-                                                        <a href="product-detail-variable.html">Product Details
-                                                            Variable</a>
-                                                    </li>
-                                                    <li>
-
-                                                        <a href="product-detail-affiliate.html">Product Details
-                                                            Affiliate</a>
+                                                        <a href="{{ route('singleProduct', ['product' => 1]) }}">Product Details</a>
                                                     </li>
                                                 </ul>
                                                 <!--====== End - Dropdown ======-->
@@ -1371,43 +1255,7 @@
                                                 <ul style="width:200px">
                                                     <li>
 
-                                                        <a href="shop-grid-left.html">Shop Grid Left Sidebar</a>
-                                                    </li>
-                                                    <li>
-
-                                                        <a href="shop-grid-right.html">Shop Grid Right Sidebar</a>
-                                                    </li>
-                                                    <li>
-
-                                                        <a href="shop-grid-full.html">Shop Grid Full Width</a>
-                                                    </li>
-                                                    <li>
-
-                                                        <a href="shop-side-version-2.html">Shop Side Version 2</a>
-                                                    </li>
-                                                </ul>
-                                                <!--====== End - Dropdown ======-->
-                                            </li>
-                                            <li class="has-dropdown has-dropdown--ul-left-100">
-
-                                                <a>Shop List Layout<i
-                                                        class="fas fa-angle-down i-state-right u-s-m-l-6"></i></a>
-
-                                                <!--====== Dropdown ======-->
-
-                                                <span class="js-menu-toggle"></span>
-                                                <ul style="width:200px">
-                                                    <li>
-
-                                                        <a href="shop-list-left.html">Shop List Left Sidebar</a>
-                                                    </li>
-                                                    <li>
-
-                                                        <a href="shop-list-right.html">Shop List Right Sidebar</a>
-                                                    </li>
-                                                    <li>
-
-                                                        <a href="shop-list-full.html">Shop List Full Width</a>
+                                                        <a href="{{ route('shop') }}">Shop Grid Left Sidebar</a>
                                                     </li>
                                                 </ul>
                                                 <!--====== End - Dropdown ======-->
@@ -1422,65 +1270,22 @@
                                             </li>
                                             <li>
 
-                                                <a href="checkout.html">Checkout</a>
+                                                <a href="{{ route('static', ['page'=>'faq']) }}">FAQ</a>
                                             </li>
                                             <li>
 
-                                                <a href="faq.html">FAQ</a>
+                                                <a href="{{ route('static', ['page'=>'about']) }}">About us</a>
                                             </li>
                                             <li>
 
-                                                <a href="about.html">About us</a>
+                                                <a href="{{ route('static', ['page'=>'contact']) }}">Contact</a>
                                             </li>
                                             <li>
 
-                                                <a href="contact.html">Contact</a>
-                                            </li>
-                                            <li>
-
-                                                <a href="404.html">404</a>
+                                                <a href="notfound">404</a>
                                             </li>
                                         </ul>
                                         <!--====== End - Dropdown ======-->
-                                    </li>
-                                    <li class="has-dropdown">
-
-                                        <a>BLOG<i class="fas fa-angle-down u-s-m-l-6"></i></a>
-
-                                        <!--====== Dropdown ======-->
-
-                                        <span class="js-menu-toggle"></span>
-                                        <ul style="width:200px">
-                                            <li>
-
-                                                <a href="blog-left-sidebar.html">Blog Left Sidebar</a>
-                                            </li>
-                                            <li>
-
-                                                <a href="blog-right-sidebar.html">Blog Right Sidebar</a>
-                                            </li>
-                                            <li>
-
-                                                <a href="blog-sidebar-none.html">Blog Sidebar None</a>
-                                            </li>
-                                            <li>
-
-                                                <a href="blog-masonry.html">Blog Masonry</a>
-                                            </li>
-                                            <li>
-
-                                                <a href="blog-detail.html">Blog Details</a>
-                                            </li>
-                                        </ul>
-                                        <!--====== End - Dropdown ======-->
-                                    </li>
-                                    <li>
-
-                                        <a href="shop-side-version-2.html">VALUE OF THE DAY</a>
-                                    </li>
-                                    <li>
-
-                                        <a href="shop-side-version-2.html">GIFT CARDS</a>
                                     </li>
                                 </ul>
                                 <!--====== End - List ======-->
@@ -1507,7 +1312,7 @@
                                 <ul class="ah-list ah-list--design1 ah-list--link-color-secondary">
                                     <li>
 
-                                        <a href="index.html"><i class="fas fa-home"></i></a>
+                                        <a href="{{ route('home') }}"><i class="fas fa-home"></i></a>
                                     </li>
                                     <li>
 
@@ -1518,7 +1323,8 @@
                                         <a class="mini-cart-shop-link">
                                             <i class="fas fa-shopping-bag"></i>
 
-                                            <span class="total-item-round">{{ Cart::instance('cart')->content()->count() }}</span>
+                                            <span
+                                                class="total-item-round">{{ Cart::instance('cart')->content()->count() }}</span>
                                         </a>
 
                                         <!--====== Dropdown ======-->
@@ -1529,33 +1335,37 @@
                                             <!--====== Mini Product Container ======-->
                                             <div class="mini-product-container gl-scroll u-s-m-b-15">
                                                 @foreach (Cart::instance('cart')->content() as $item)
-                                                @php
-                                                    $product = App\Models\Product::find($item->id);
-                                                @endphp
+                                                    @php
+                                                        $product = App\Models\Product::find($item->id);
+                                                    @endphp
 
-                                                <!--====== Card for mini cart ======-->
-                                                <div class="card-mini-product">
-                                                    <div class="mini-product">
-                                                        <div class="mini-product__info-wrapper">
+                                                    <!--====== Card for mini cart ======-->
+                                                    <div class="card-mini-product">
+                                                        <div class="mini-product">
+                                                            <div class="mini-product__info-wrapper">
 
-                                                            <span class="mini-product__category">
+                                                                <span class="mini-product__category">
 
-                                                                <a
-                                                                    href="{{ route('shop', ['brand'=>$product->brand->id]) }}">{{ $product->brand->name }}</a></span>
+                                                                    <a
+                                                                        href="{{ route('shop', ['brand' => $product->brand->id]) }}">{{ $product->brand->name }}</a></span>
 
-                                                            <span class="mini-product__name">
+                                                                <span class="mini-product__name">
 
-                                                                <a href="{{ route('singleProduct', ['product'=> $product->id]) }}">{{ $product->name }}</a></span>
+                                                                    <a
+                                                                        href="{{ route('singleProduct', ['product' => $product->id]) }}">{{ $product->name }}</a></span>
 
-                                                            <span class="mini-product__quantity">{{ $item->qty }} x</span>
+                                                                <span
+                                                                    class="mini-product__quantity">{{ $item->qty }}
+                                                                    x</span>
 
-                                                            <span class="mini-product__price">{{ $item->price }}</span>
+                                                                <span
+                                                                    class="mini-product__price">{{ $item->price }}</span>
+                                                            </div>
                                                         </div>
-                                                    </div>
 
-                                                    <a class="mini-product__delete-link far fa-trash-alt"></a>
-                                                </div>
-                                                <!--====== End - Card for mini cart ======-->
+                                                        <a class="mini-product__delete-link far fa-trash-alt"></a>
+                                                    </div>
+                                                    <!--====== End - Card for mini cart ======-->
                                                 @endforeach
 
 
@@ -1569,7 +1379,8 @@
 
                                                     <span class="subtotal-text">SUBTOTAL</span>
 
-                                                    <span class="subtotal-value">${{ Cart::instance('cart')->total() }}</span>
+                                                    <span
+                                                        class="subtotal-value">${{ Cart::instance('cart')->total() }}</span>
                                                 </div>
                                                 <div class="mini-action">
 
